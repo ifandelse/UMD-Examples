@@ -5,16 +5,15 @@
 */
 define([
 	"underscore",
-	"decode",
-	"encode"
-], function(_, decode, encode) {
+	"querystring"
+], function(_, qs) {
 	return {
 		hasUnderscore: function(){
 			return typeof _ !== "undefined";
 		},
 		hasQueryString: function(){
-			return typeof decode !== "undefined" &&
-				   typeof encode !== "undefined";
+			return typeof qs.decode !== "undefined" &&
+				   typeof qs.encode !== "undefined";
 		}
 	};
 });

@@ -1,18 +1,14 @@
 require.config( {
-    baseUrl: "/",
+    baseUrl: "/node_modules",
+
     paths: {
-        underscore : "node_modules/underscore/underscore",
-        encode: "node_modules/querystring/encode",
-        decode: "node_modules/querystring/decode",
-        edgy : "js/zeModuleCultureClub"
+        "edgy": "../js/zeModuleCultureClub"
     },
 
-    shim: {
-        underscore: {
-            deps: [],
-            exports: "_"
-        }
-    }
+    packages: [
+        {name: "underscore", location: "underscore", main: "underscore"},
+        {name: "querystring", location: "querystring", main: "index"}
+    ]
 } );
 
 define( ["edgy"], function( edgy ) {
